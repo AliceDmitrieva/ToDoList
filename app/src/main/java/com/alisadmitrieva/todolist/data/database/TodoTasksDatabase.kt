@@ -1,4 +1,4 @@
-package com.alisadmitrieva.todolist.database
+package com.alisadmitrieva.todolist.data.database
 
 import android.content.Context
 import androidx.room.Database
