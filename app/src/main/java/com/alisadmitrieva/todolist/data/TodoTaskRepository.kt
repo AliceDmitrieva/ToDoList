@@ -4,32 +4,33 @@ import android.app.Application
 import com.alisadmitrieva.todolist.data.database.TodoTask
 import com.alisadmitrieva.todolist.data.database.TodoTaskDao
 import com.alisadmitrieva.todolist.data.database.TodoTasksDatabase
+import io.reactivex.Completable
 import io.reactivex.Flowable
 
 class TodoRepository(application: Application) {
 
     private val todoTaskDao: TodoTaskDao
-    private val allTodos: Flowable<List<TodoTask>>
+    private val todoTasks: Flowable<MutableList<TodoTask>>
 
     init {
         val database = TodoTasksDatabase.getInstance(application.applicationContext)
         todoTaskDao = database!!.todoTaskDao()
-        allTodos = todoTaskDao.getTodoTasks()
+        todoTasks = todoTaskDao.getTodoTasks()
     }
 
-    fun saveTodoTask(todo: TodoTask) {
-        todoTaskDao.saveTodoTask(todo)
+    fun saveTodoTask(todo: TodoTask): Completable {
+        return todoTaskDao.saveTodoTask(todo)
     }
 
-    fun deleteTodoTask(todo: TodoTask) {
-        todoTaskDao.deleteTodoTask(todo)
+    fun deleteTodoTask(todo: TodoTask): Completable {
+        return todoTaskDao.deleteTodoTask(todo)
     }
 
-    fun updateTodoTask(todo: TodoTask) {
-        todoTaskDao.updateTodoTask(todo)
+    fun updateTodoTask(todo: TodoTask): Completable {
+        return todoTaskDao.updateTodoTask(todo)
     }
 
-    fun getTodoTasks(): Flowable<List<TodoTask>> {
-        return allTodos
+    fun getTodoTasks(): Flowable<MutableList<TodoTask>> {
+        return todoTasks
     }
 }

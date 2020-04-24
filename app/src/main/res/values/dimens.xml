@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fab_Margin">24dp</dimen>
+    <dimen name="todotaskItem_padding">8dp</dimen>
+    <dimen name="todotaskText_marginTop">10dp</dimen>
+    <dimen name="createTodotask_padding">8dp</dimen>
+    <dimen name="titleTextTIL_marginTop">8dp</dimen>
+    <dimen name="todoTaskTextTIL_margin">8dp</dimen>
+</resources>

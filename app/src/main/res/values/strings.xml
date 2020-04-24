@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ToDoList</string>
+    <string name="blankTitle">Title is blank</string>
+    <string name="blankText">Test is blank</string>
+    <string name="titleHint">Title</string>
+    <string name="textHint">Your text</string>
+    <string name="save">save</string>
 </resources>
